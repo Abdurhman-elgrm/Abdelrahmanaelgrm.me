@@ -106,20 +106,27 @@ no extra CSS needed.
 
 ---
 
-## Step 3: The "prompt" label style
+## Step 3: The "bordered-box" container & floating header style
 
-**Why it matters:** reused across every section below, so getting this right
-once saves repeated work.
+**Why it matters:** wraps each section inside a clean bordered box with the terminal command badge resting directly on top of the top border line.
 
 ```css
-.prompt {
-  color: #7ee787;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+.bordered-box {
+  position: relative;
+  border: 1.5px solid #ffffff;
+  background-color: #0d1117;
+  padding: 24px;
 }
 
-.prompt::before {
-  content: "> ";
+.bordered-box-header {
+  position: absolute;
+  top: -12px;                  /* Pulls text up onto the top border line */
+  left: 20px;
+  background-color: #0d1117;   /* Same as page background to break the border line */
+  padding: 0 8px;              /* Creates space around text */
+  font-family: monospace;
+  font-style: italic;
+  font-size: 15px;
 }
 
 .section-note {
@@ -133,19 +140,15 @@ once saves repeated work.
 
 ## Step 4: "For visitors" callout block
 
-**Why it matters:** simplest possible section — just a prompt label, a short
-paragraph, and a link. Good warm-up before the more complex sections.
+**Why it matters:** simplest possible section — uses the `.bordered-box` container with `.bordered-box-header`, a short paragraph, and a link.
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">cat ~/for-visitors.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/for-visitors.md</span>
   <p>Visiting from one of my videos or posts? Here's a few things for you.</p>
   <a href="#">resources</a>
 </section>
 ```
-
-No new CSS — this proves your `.terminal-block` and `.prompt` classes are
-truly reusable.
 
 ---
 
@@ -156,8 +159,8 @@ images instead of one — practice handling multiple flex children of the same
 type.
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">whoami</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">whoami</span>
   <div class="bio">
     <div class="bio-photos">
       <img src="https://placehold.co/160x160" alt="A photo of you">
@@ -213,8 +216,8 @@ independently without overlapping.
 and `<cite>` instead of generic `<p>` tags, plus a simple link row underneath.
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">cat ~/random.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/random.md</span>
   <p class="section-note">My life motto</p>
   <blockquote>
     "Some quote that means something to you"
@@ -257,8 +260,8 @@ repeating row of logo + role details. It's Flexbox again, but nested inside a
 vertically stacked list of entries, which is great practice combining the two.
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">cat ~/experience.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/experience.md</span>
   <p class="section-note">the more professional-looking part of this</p>
 
   <ul class="experience-list">
@@ -335,8 +338,8 @@ whole card being a link (useful when a project has 2+ links, like GitHub
 *and* a live demo).
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">ls ~/projects.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">ls ~/projects.md</span>
   <p class="section-note">a few things i want people to actually click on</p>
   <div class="project-grid">
     <div class="project-card">
@@ -408,8 +411,8 @@ reading a design and recognizing "I've already built this pattern" instead of
 inventing something new — a real skill, not just typing practice.
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">cat ~/roblox-games.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/roblox-games.md</span>
   <p class="section-note">my games :D</p>
   <div class="project-grid">
     <a href="#" class="project-card">
@@ -434,8 +437,8 @@ different kinds of content. Confirms your class names are reusable rather
 than overly specific.
 
 ```html
-<section class="terminal-block">
-  <p class="prompt">cat ~/friends.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/friends.md</span>
   <p class="section-note">cool friends</p>
   <ul class="dash-list">
     <li><a href="#">Friend One</a></li>
@@ -443,8 +446,8 @@ than overly specific.
   </ul>
 </section>
 
-<section class="terminal-block">
-  <p class="prompt">cat ~/links.md</p>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/links.md</span>
   <ul class="dash-list">
     <li><a href="mailto:you@example.com">Email</a></li>
     <li><a href="#">GitHub</a></li>
@@ -480,8 +483,8 @@ with a caption under each image — practice wrapping an image and a short text
 label together as one repeatable unit.
 
 ```html
-<section class="terminal-block">
-  <h2>Company Name Pictures</h2>
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">Company Name Pictures</span>
   <p class="section-note">a few snapshots from that time</p>
   <div class="caption-grid">
     <figure>
@@ -528,8 +531,8 @@ engines, not just visually correct.
 ## Step 12: Footer
 
 ```html
-<footer class="terminal-block">
-  <p class="prompt">cat README.md</p>
+<footer class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat README.md</span>
   <p>Source code on <a href="#">GitHub</a></p>
 </footer>
 ```
