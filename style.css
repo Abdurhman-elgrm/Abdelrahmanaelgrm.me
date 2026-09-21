@@ -8,19 +8,19 @@
 body{
 
     font-family:  monospace;
-    background-color: #0d1117;
+    background-color: #F5F4EF;
     color: #f0f0f0;
     line-height: 1.6;
-    padding: 20px;
+    padding: 15px;
 }
 a{
-    color: #ededed;
+    color: #000000;
     text-decoration: none;
 }
 
 .site-header,.terminal-block,.bordered-box {
     max-width: 1000px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 30px auto;
 
 }
 .site-header {
@@ -28,11 +28,12 @@ a{
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
+    
     flex-wrap: wrap;
     gap: 10px;
 }
 .site-header h1 a {
-  color: #c9d1d9;
+  color: #000000;
   font-size: 1.6rem;
 }
 .links {
@@ -40,12 +41,6 @@ a{
   gap: 20px;
 }
 
-.section-note {
-    color: #8b949e;
-    font-size:0.85rem;
-    margin-bottom: 15px;
-
-}
 .terminal-block a{
     display: flex;
     justify-content: space-between;
@@ -57,22 +52,32 @@ a{
 }
 .bordered-box {
   position: relative;
-  border: 1.5px solid #ffffff;
-  background-color: #0d1117;
+  border: 1.5px solid #000000;
+  background-color: #F5F4EF;
   padding: 24px;
 }
 .bordered-box-header {
+  color: #000000;
   position: absolute;
   top: -12px;                  /* Pulls text up onto the top border line */
   left: 20px;
-  background-color: #0d1117;   /* Same as page background to break the border line */
+  background-color: #F5F4EF;   /* Same as page background to break the border line */
   padding: 0 8px;              /* Creates space around text */
   font-family: monospace;
   font-style: italic;
-  font-size: 15px;
+  font-size: 20px;
+}
+.bordered-box-body{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
 }
 p {
-
+    color: #000000;
     font-size: 15px;
 }
 /* Base button styles */
@@ -80,7 +85,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 5px 20px;
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -118,14 +123,7 @@ p {
 .btn-github svg {
   fill: #000000;
 }
-.bordered-box-body{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
 
-}
 .btn-resources{
     background-color: #f0f0f0;
     color: #000000;
