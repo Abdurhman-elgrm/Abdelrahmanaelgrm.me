@@ -6,10 +6,10 @@
 }
 
 body{
-
-    font-family:  monospace;
+    font-family: 'Consolas', 'Cascadia Code', 'Courier New', monospace;
+    font-weight: 500;            /* Soft bold / medium weight */
     background-color: #F5F4EF;
-    color: #f0f0f0;
+    color: #1a1a1a;
     line-height: 1.6;
     padding: 15px;
 }
@@ -128,6 +128,68 @@ p {
     background-color: #f0f0f0;
     color: #000000;
 }
+.bio{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;    /* Aligns items to the top so bio-pic margin can control its position */
+    flex-wrap: wrap;
+    padding-top: 0;             /* Removed padding from top */
+    margin-top: 10px;           /* Minimal space below the top border */
+    margin-bottom: 30px;
+}
+.bio-pic {
+  position: relative;
+  width: 250px;               /* Width of the picture */
+  height: 350px;              /* Height of the picture */
+  margin-top: 20px;           /* Shifts the picture down a little */
+  border-radius: 8px;
+  border: 1.5px solid #30363d;
+  overflow: hidden;           /* Keeps zoomed image inside border */
+  cursor: pointer;
+  flex-shrink: 0; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+.bio-pic img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.bio-pic .img-primary {
+  opacity: 1;
+}
+.bio-pic .img-hover {
+  opacity: 0;
+}
+.bio-pic:hover {
+  border-color: #58a6ff;
+  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.25);
+}
+.bio-pic:hover .img-primary {
+  opacity: 0;
+  transform: scale(1.05);
+}
+.bio-pic:hover .img-hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
 
-
+.bio-text {
+  flex: 1;
+  min-width: 280px;
+  color: #0c0f12b9;
+  
+}
+.bio-text p {
+  font-weight: 500;            /* Soft bold */
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+.bordered-box .bio{
+    padding-top: 0%;
+}
