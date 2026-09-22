@@ -366,3 +366,22 @@ p {
   color: #0969da;
   font-weight: 700;
 }
+/* Custom Project Logo Size */
+.project1,
+.logo-container.project1 {
+  width: 140px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.886);
+}
+.project2,
+.logo-container.project2 {
+  width: 140px;
+  height: 80px;
+  background-color: white;
+}
+.project3,
+.logo-container.project3 {
+  width: 140px;
+  height: 80px;
+  background-color: rgb(56, 54, 54);
+}
