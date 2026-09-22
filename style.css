@@ -304,6 +304,15 @@ p {
   padding: 4px;
 }
 
+/* Larger Logo for Projects */
+.logo-container.project1,
+.logo-container.logo-large {
+  width: 70px;                /* Bigger width */
+  height: 70px;               /* Bigger height */
+  border-radius: 8px;
+  padding: 6px;
+}
+
 .logo-container img {
   width: 100%;
   height: 100%;
@@ -366,7 +375,7 @@ p {
   color: #0969da;
   font-weight: 700;
 }
-/* Custom Project Logo Size */
+
 .project1,
 .logo-container.project1 {
   width: 140px;
@@ -384,4 +393,10 @@ p {
   width: 140px;
   height: 80px;
   background-color: rgb(56, 54, 54);
+}
+.project4,
+.logo-container.project4 {
+  width: 140px;
+  height: 80px;
+  background-color: rgb(12, 12, 12);
 }
