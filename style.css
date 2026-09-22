@@ -6,9 +6,12 @@
 }
 
 body{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
     font-family: 'Consolas', 'Cascadia Code', 'Courier New', monospace;
     font-weight: 500;            /* Soft bold / medium weight */
     background-color: #F5F4EF;
+    color: #000000;
     color: #1a1a1a;
     line-height: 1.6;
     padding: 15px;
@@ -41,15 +44,6 @@ a{
   gap: 20px;
 }
 
-.terminal-block a{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-
-}
 .bordered-box {
   position: relative;
   border: 1.5px solid #000000;
@@ -74,11 +68,12 @@ a{
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
+    
 
 }
 p {
     color: #000000;
-    font-size: 15px;
+    font-size: 18px;
 }
 /* Base button styles */
 .btn {
@@ -136,10 +131,13 @@ p {
     flex-wrap: wrap;
     padding-top: 0;             /* Removed padding from top */
     margin-top: 10px;           /* Minimal space below the top border */
+    margin-bottom: 70px;
     margin-bottom: 30px;
 }
 .bio-pic {
   position: relative;
+  width: 300px;               /* Width of the picture */
+  height: 400px;              /* Height of the picture */
   width: 250px;               /* Width of the picture */
   height: 350px;              /* Height of the picture */
   margin-top: 20px;           /* Shifts the picture down a little */
@@ -182,14 +180,72 @@ p {
 .bio-text {
   flex: 1;
   min-width: 280px;
-  color: #0c0f12b9;
+  color: hsla(0, 4%, 11%, 0.904);
   
 }
 .bio-text p {
+  font-weight: 400;
   font-weight: 500;            /* Soft bold */
   margin-bottom: 30px;
   font-size: 18px;
+  color: hsla(0, 4%, 11%, 0.904);
 }
 .bordered-box .bio{
     padding-top: 0%;
+}
+.experience-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+.card-left{
+  display: flex;
+  gap: 16px;
+}
+.logo-container{
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.logo-container img{
+  width: 100%;
+  height: auto;
+}
+.section-note{
+  font-size: 18px;
+  margin: 10px;
+  color: hsla(0, 4%, 11%, 0.904);
+}
+.details{
+  gap: 0px;
+}
+.job-title{
+  font-size: 16px;
+  color: hsla(0, 4%, 11%, 0.904);
+  margin-bottom: 10px ;
+   
+}
+.btn-details{
+  width: 80px;               /* Custom Width */
+  height: 26px;              /* Custom Height */
+  padding: 0;                /* Resets default padding */
+  display: inline-flex;
+  justify-content: center;   /* Centers horizontally */
+  align-items: center;       /* Centers vertically */
+  text-align: center;
+  line-height: 1;            /* Fixes vertical text baseline offset */
+  gap: 0;                    /* Removes icon gap */
+  font-size: 14px;
+  background-color: #F5F4EF ;           /* Clean text size */
 }
