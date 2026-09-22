@@ -1,152 +1,226 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Import JetBrains Mono for crisp, pleasant terminal typography */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 400;
-    font-family: 'Consolas', 'Cascadia Code', 'Courier New', monospace;
-    font-weight: 500;            /* Soft bold / medium weight */
-    background-color: #F5F4EF;
-    color: #000000;
-    color: #1a1a1a;
-    line-height: 1.6;
-    padding: 15px;
-}
-a{
-    color: #000000;
-    text-decoration: none;
+body {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 16px;
+  font-weight: 500;            /* Pleasant soft bold throughout the site */
+  background-color: #F5F4EF;
+  color: #1f2328;              /* Soft charcoal for comfortable reading */
+  line-height: 1.7;
+  padding: 20px 15px;
+  -webkit-font-smoothing: antialiased;
 }
 
-.site-header,.terminal-block,.bordered-box {
-    max-width: 1000px;
-    margin: 0 auto 30px auto;
-
+a {
+  color: #1f2328;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
+
+a:hover {
+  color: #0969da;
+}
+
+/* =========================================
+   CONTAINERS & SHARED LAYOUT
+========================================= */
+.site-header,
+.terminal-block,
+.bordered-box {
+  max-width: 960px;
+  margin: 0 auto 35px auto;
+}
+
+/* =========================================
+   HEADER SECTION
+========================================= */
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
+
 .site-header h1 a {
-  color: #000000;
-  font-size: 1.6rem;
+  color: #1f2328;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
+
 .links {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 15px;
 }
 
+/* =========================================
+   BORDERED BOX & FLOATING HEADERS
+========================================= */
 .bordered-box {
   position: relative;
-  border: 1.5px solid #000000;
+  border: 1.5px solid #1f2328;
   background-color: #F5F4EF;
   padding: 24px;
+  border-radius: 4px;
 }
-.bordered-box-header {
-  color: #000000;
-  position: absolute;
-  top: -12px;                  /* Pulls text up onto the top border line */
-  left: 20px;
-  background-color: #F5F4EF;   /* Same as page background to break the border line */
-  padding: 0 8px;              /* Creates space around text */
-  font-family: monospace;
-  font-style: italic;
-  font-size: 20px;
-}
-.bordered-box-body{
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    
 
+.bordered-box-header {
+  color: #1f2328;
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  background-color: #F5F4EF;
+  padding: 0 10px;
+  font-family: inherit;
+  font-style: italic;
+  font-weight: 600;            /* Soft-bold command prompt */
+  font-size: 15px;
+  letter-spacing: -0.2px;
 }
+
+.bordered-box-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-note {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 6px 0 18px 0;
+  color: #656d76;
+}
+
 p {
-    color: #000000;
-    font-size: 18px;
+  color: #24292f;
+  font-size: 15.5px;
+  font-weight: 500;            /* Soft bold text */
+  line-height: 1.7;
 }
-/* Base button styles */
+
+/* =========================================
+   RETRO BUTTON SYSTEM
+========================================= */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 5px 20px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+  padding: 6px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
-  border: 1.5px solid #000000;
-  box-shadow: 3.5px 3.5px 0px #666666; /* Retro solid shadow */
+  border: 1.5px solid #1f2328;
+  box-shadow: 3px 3px 0px #666666;
   cursor: pointer;
+  border-radius: 3px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Press state */
 .btn:active {
   transform: translate(2px, 2px);
-  box-shadow: 1.5px 1.5px 0px #666666;
+  box-shadow: 1px 1px 0px #666666;
 }
 
-/* Icon sizing */
 .btn svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
 
-/* LinkedIn styles */
 .btn-linkedin {
   background-color: #0072b1;
   color: #ffffff;
+  border-color: #004d77;
 }
 
-/* GitHub styles */
+.btn-linkedin:hover {
+  color: #ffffff;
+  background-color: #005c8e;
+}
+
 .btn-github {
-  background-color: #f7f5f0;
-  color: #000000;
+  background-color: #ffffff;
+  color: #1f2328;
 }
 
 .btn-github svg {
-  fill: #000000;
+  fill: #1f2328;
 }
 
-.btn-resources{
-    background-color: #f0f0f0;
-    color: #000000;
+.btn-resources {
+  background-color: #ffffff;
+  color: #1f2328;
 }
-.bio{
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    align-items: flex-start;    /* Aligns items to the top so bio-pic margin can control its position */
-    flex-wrap: wrap;
-    padding-top: 0;             /* Removed padding from top */
-    margin-top: 10px;           /* Minimal space below the top border */
-    margin-bottom: 70px;
-    margin-bottom: 30px;
+
+.btn-details {
+  width: 75px;
+  height: 25px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #1f2328;
+  line-height: 1;
+  gap: 0;
+  box-shadow: 2px 2px 0px #888888;
 }
+
+/* =========================================
+   BIO SECTION
+========================================= */
+.bio {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.bio-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.bio-text p {
+  font-size: 16px;
+  font-weight: 500;            /* Pleasant readable soft bold */
+  line-height: 1.75;
+  margin-bottom: 18px;
+  color: #24292f;
+}
+
+.bio-text p:last-child {
+  margin-bottom: 0;
+}
+
 .bio-pic {
   position: relative;
-  width: 300px;               /* Width of the picture */
-  height: 400px;              /* Height of the picture */
-  width: 250px;               /* Width of the picture */
-  height: 350px;              /* Height of the picture */
-  margin-top: 20px;           /* Shifts the picture down a little */
+  width: 240px;
+  height: 310px;
+  margin-top: 6px;
   border-radius: 8px;
-  border: 1.5px solid #30363d;
-  overflow: hidden;           /* Keeps zoomed image inside border */
+  border: 1.5px solid #1f2328;
+  overflow: hidden;
   cursor: pointer;
-  flex-shrink: 0; 
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .bio-pic img {
@@ -158,94 +232,137 @@ p {
   object-fit: cover;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
 .bio-pic .img-primary {
   opacity: 1;
 }
+
 .bio-pic .img-hover {
   opacity: 0;
 }
+
 .bio-pic:hover {
-  border-color: #58a6ff;
-  box-shadow: 0 8px 24px rgba(88, 166, 255, 0.25);
-}
-.bio-pic:hover .img-primary {
-  opacity: 0;
-  transform: scale(1.05);
-}
-.bio-pic:hover .img-hover {
-  opacity: 1;
-  transform: scale(1.05);
+  border-color: #0969da;
+  box-shadow: 6px 6px 0px rgba(9, 105, 218, 0.25);
+  transform: translateY(-2px);
 }
 
-.bio-text {
-  flex: 1;
-  min-width: 280px;
-  color: hsla(0, 4%, 11%, 0.904);
-  
+.bio-pic:hover .img-primary {
+  opacity: 0;
+  transform: scale(1.04);
 }
-.bio-text p {
-  font-weight: 400;
-  font-weight: 500;            /* Soft bold */
-  margin-bottom: 30px;
-  font-size: 18px;
-  color: hsla(0, 4%, 11%, 0.904);
+
+.bio-pic:hover .img-hover {
+  opacity: 1;
+  transform: scale(1.04);
 }
-.bordered-box .bio{
-    padding-top: 0%;
-}
-.experience-card{
+
+/* =========================================
+   EXPERIENCE SECTION
+========================================= */
+.experience-card {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   background-color: #ffffff;
-  border: 1px solid #000000;
-  padding: 16px;
-  font-family: Arial, sans-serif;
+  border: 1.5px solid #1f2328;
+  border-radius: 6px;
+  padding: 16px 18px;
   width: 100%;
-  max-width: 1000px;
   box-sizing: border-box;
+  margin-bottom: 16px;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.card-left{
+
+.experience-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.experience-card:last-child {
+  margin-bottom: 0;
+}
+
+.card-left {
   display: flex;
   gap: 16px;
+  align-items: flex-start;
 }
-.logo-container{
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
+
+.logo-container {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background-color: #fafbfc;
+  overflow: hidden;
+  padding: 4px;
 }
-.logo-container img{
+
+.logo-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
-.section-note{
-  font-size: 18px;
-  margin: 10px;
-  color: hsla(0, 4%, 11%, 0.904);
+
+.details {
+  display: flex;
+  flex-direction: column;
 }
-.details{
-  gap: 0px;
-}
-.job-title{
+
+.company-name {
   font-size: 16px;
-  color: hsla(0, 4%, 11%, 0.904);
-  margin-bottom: 10px ;
-   
+  font-weight: 700;
+  color: #1f2328;
+  margin-bottom: 2px;
 }
-.btn-details{
-  width: 80px;               /* Custom Width */
-  height: 26px;              /* Custom Height */
-  padding: 0;                /* Resets default padding */
-  display: inline-flex;
-  justify-content: center;   /* Centers horizontally */
-  align-items: center;       /* Centers vertically */
-  text-align: center;
-  line-height: 1;            /* Fixes vertical text baseline offset */
-  gap: 0;                    /* Removes icon gap */
+
+.job-title {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #57606a;
+  margin-bottom: 8px;
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.card-right .date {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #57606a;
+}
+
+.card-right .GPA {
+  font-size: 13px;
+  font-weight: 700;
+  color: #57606a;
+  background-color: #F5F4EF;
+  border: 1px solid #05080a66;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.experience-desc {
   font-size: 14px;
-  background-color: #F5F4EF ;           /* Clean text size */
+  font-weight: 500;
+  color: #444d56;
+  line-height: 1.6;
+  margin-top: 6px;
+  max-width: 620px;
+}
+
+.experience-desc strong {
+  color: #0969da;
+  font-weight: 700;
 }
