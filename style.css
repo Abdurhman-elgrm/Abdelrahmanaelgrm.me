@@ -400,3 +400,15 @@ p {
   height: 80px;
   background-color: rgb(12, 12, 12);
 }
+.dash-list {
+  list-style: none;
+}
+
+.dash-list li {
+  margin-bottom: 6px;
+}
+
+.dash-list li::before {
+  content: "- ";
+  color: #8b949e;
+}
