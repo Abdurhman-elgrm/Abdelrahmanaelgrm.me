@@ -25,7 +25,8 @@ a {
 }
 
 a:hover {
-  color: #0969da;
+  color: #000000;
+  background-color: #585757;
 }
 
 /* =========================================
@@ -84,7 +85,7 @@ a:hover {
   font-family: inherit;
   font-style: italic;
   font-weight: 600;            /* Soft-bold command prompt */
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: -0.2px;
 }
 
@@ -150,7 +151,7 @@ p {
 
 .btn-linkedin:hover {
   color: #ffffff;
-  background-color: #005c8e;
+  background-color: #000000;
 }
 
 .btn-github {
@@ -418,8 +419,7 @@ p {
   align-items: flex-start;
   background-color: #ffffff;
   border: 1.5px solid #1f2328;
-  border-radius: 6px;
-  padding: 16px 18px;
+  padding: 16px 16px;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 16px;
@@ -427,6 +427,9 @@ p {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   flex-direction: column;
   gap: 15px;
+  margin-top: 20px;
+  
+
 
 }
 .resources-p{
