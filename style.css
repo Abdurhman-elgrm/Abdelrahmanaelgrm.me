@@ -325,7 +325,7 @@ p {
 }
 
 .company-name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #1f2328;
   margin-bottom: 2px;
@@ -411,4 +411,26 @@ p {
 .dash-list li::before {
   content: "- ";
   color: #8b949e;
+}
+.resourses-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1.5px solid #1f2328;
+  border-radius: 6px;
+  padding: 16px 18px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  box-shadow: 3px 10px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-direction: column;
+  gap: 15px;
+
+}
+.resources-p{
+  font-size: 15px;
+  font-style: normal;
+  color: #444d56;
 }
