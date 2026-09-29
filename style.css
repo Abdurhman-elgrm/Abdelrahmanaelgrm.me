@@ -26,7 +26,7 @@ a {
 
 a:hover {
   color: #000000;
-  background-color: #585757;
+  
 }
 
 /* =========================================
@@ -56,6 +56,11 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+}
+
+.site-header h1 a:hover {
+  background-color: transparent;
+  color: #1f2328;
 }
 
 .links {
@@ -162,11 +167,20 @@ p {
 .btn-github svg {
   fill: #1f2328;
 }
+.btn-github:hover {
+  background-color: #000000;
+  color: white;
+}
 
 .btn-resources {
   background-color: #ffffff;
   color: #1f2328;
 }
+.btn-resources:hover {
+  background-color: #000000;
+  color: white;
+}
+
 
 .btn-details {
   width: 75px;
@@ -179,6 +193,11 @@ p {
   line-height: 1;
   gap: 0;
   box-shadow: 2px 2px 0px #888888;
+}
+
+.btn-details:hover {
+  background-color: #000000;
+  color: white;
 }
 
 /* =========================================
@@ -462,17 +481,19 @@ p {
 
 .btn-random {
   flex: 1;
-  text-align: center;
-  background-color: transparent;
+  text-align: left;
+  background-color: #F5F4EF;
   color: #000000;
   border: 1.5px solid #ffffff;
   padding: 10px 0;
-  font-family: "Courier New", monospace;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
   font-size: 0.9rem;
   font-weight: 600;
   transition: background-color 0.2s, color 0.2s;
   border-radius: 0;
-  margin: 0;
+  margin: 2px;
+
+  
 }
 
 .btn-random + .btn-random {
@@ -480,8 +501,201 @@ p {
 }
 
 .btn-random:hover {
-  background-color: #ffffff;
-  color: #0d1117;
+  background-color: rgb(43, 43, 43);
+  color: white;
   text-decoration: none;
 }
+.stage {
+  position: relative;          /* anchor for absolute children */
+  width: 100%;
+  height: 520px;
+  background-color: #111;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;  /* grid lines */
+  overflow: hidden;             /* covers that drift out vanish at the edge */
+  border: 1.5px solid #1f2328;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
+/* ── Each album cover ── */
+.cover {
+  position: absolute;          /* free-floats inside .stage */
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+  user-select: none;
+}
+
+.cover:hover {
+  border-color: #00e5ff;       /* highlight on hover */
+  z-index: 10;
+}
+
+.cover.paused {
+  border-color: #ff4d4d;       /* red border when frozen */
+  opacity: 0.85;
+}
+
+/* --- Top-Left Control Panel --- */
+.music-controls {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(245, 244, 239, 0.95);
+  color: #1f2328;
+  padding: 12px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  z-index: 100;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  min-width: 200px;
+}
+
+.controls-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.controls-sub {
+  color: #555;
+  font-size: 12px;
+}
+
+.speed-row {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.speed-row input[type="range"] {
+  width: 100%;
+  accent-color: #000;
+  cursor: pointer;
+}
+
+/* --- Bottom-Left Hover Card --- */
+.hover-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(245, 244, 239, 0.95);
+  color: #1f2328;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 100;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  min-width: 240px;
+}
+
+.hover-card.visible {
+  opacity: 1;
+}
+
+.tooltip-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #1f2328;
+  flex-shrink: 0;
+}
+
+.hover-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hover-label {
+  font-size: 11px;
+  color: #777;
+  font-family: monospace;
+}
+
+.tooltip-album {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 2px 0 0 0;
+  color: #000;
+}
+
+.tooltip-artist {
+  font-size: 13px;
+  color: #444;
+  margin: 0;
+}
+
+/* --- Mood Lists Section --- */
+.mood-container {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background-color: #E8E6DF;
+  padding: 22px;
+  border: 1.5px solid #1f2328;
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+}
+
+.mood-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.mood-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 10px 12px;
+  text-align: center;
+  min-width: 85px;
+  color: #1f2328;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.tag-cyan {
+  background-color: #4ee0b5;
+}
+
+.tag-coral {
+  background-color: #ff6565;
+}
+
+.mood-headliners {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.25;
+  color: #1f2328;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.mood-artists {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
 
