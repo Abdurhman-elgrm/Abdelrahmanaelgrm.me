@@ -594,3 +594,43 @@ By the end you'll have practiced every pattern from the first guide, plus:
 `<blockquote>`/`<cite>`, `object-fit: contain` vs `cover`, nested-vs-whole-card
 links, and `<figure>`/`<figcaption>` — a solid semantic HTML vocabulary on top
 of the CSS layout skills.
+
+---
+
+## Step 14: Summary of Completed Custom Sections & Pages
+
+Here is a summary of all custom features, sub-pages, and interactive components added to the portfolio:
+
+### 1. `resources.html` (Dedicated Sub-page)
+- **Header & Navigation**: Links back to main homepage (`/`), LinkedIn, and GitHub.
+- **Shelf Description Box**: `ls ~/resources.md` terminal box.
+- **Resource Cards**:
+  - **Resume Template**: Clean two-page LaTeX template link.
+  - **OOP in (Python & C++)**: Side-by-side reference repo.
+  - **SQL Revision**: Structured query reference guide.
+  - **Hands-On Machine Learning**: Full ML stack notes.
+  - **Automate the Boring Stuff with Python**: Python automation book reference.
+  - **Neural Net from Scratch**: Karpathy "Zero to Hero" notes.
+
+### 2. Homepage Enhancements (`index.html`)
+- **`cat ~/random.md` Section**:
+  - Life Motto: *"I build things. Sometimes they even work."*
+  - Equal-width navigation buttons: `Currently`, `Stats`, `Beliefs`, and `Music` (linking to sub-pages).
+- **`cat ~/bookshelf.md` Section**:
+  - Divided into **technical** (ML, Math, Algorithms, Python, Computer Org, Robotics) and **non-technical** (The One Thing, Atomic Habits, The Lean Startup, DotCom Secrets) categories with clean title/author styling.
+- **Custom Header Hover Fix**:
+  - Override rule for `.site-header h1 a:hover` preventing the grey background fill on hover while preserving global link styles elsewhere.
+
+### 3. Interactive Music App (`music.html` & `music.js`)
+- **Interactive Canvas Box (`.stage`)**:
+  - 56 floating, bouncing album covers with Deezer artwork.
+  - Physics-based velocity loop (`requestAnimationFrame`).
+  - Click-to-pause/resume logic per album cover.
+- **Control Overlay (`.music-controls`)**:
+  - Top-left panel with `music.exe` header, speed slider, and real-time multiplier readout (`0.50x`).
+- **Fixed Hover Card (`.hover-card`)**:
+  - Bottom-left overlay displaying real-time album cover thumbnail, album title, and artist name on hover.
+- **Unified Mood Lists (`.mood-container`)**:
+  - Seamlessly attached beneath the canvas stage (`border-top` connection).
+  - Categorized mood rows (**LOCKED IN**, **WINDOWS DOWN**, **LATE NIGHT WALKS**) with color-coded tags (Cyan & Coral) and artist lineups.
+
