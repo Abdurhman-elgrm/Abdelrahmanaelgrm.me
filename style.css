@@ -697,3 +697,26 @@ p {
   line-height: 1.6;
   letter-spacing: 0.2px;
 }
+
+/* --- Certificate Preview Images --- */
+.cert-img-container {
+  width: 100%;
+  margin: 12px 0;
+  border: 1.5px solid #1f2328;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fafbfc;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.cert-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.cert-img:hover {
+  transform: scale(1.01);
+}
