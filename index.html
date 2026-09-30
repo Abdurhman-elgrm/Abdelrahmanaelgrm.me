@@ -65,7 +65,6 @@
     <p class="section-note">my life motto</p>
     <blockquote>"I build things. Sometimes they even work."</blockquote>
     <nav class="links random-links">
-        <a href="#" class="btn btn-random">Currently</a>
         <a href="ME.html" class="btn btn-random">ME</a>
         <a href="certificate.html" class="btn btn-random">Certificates</a>
         <a href="music.html" class="btn btn-random">Music</a>
@@ -84,10 +83,11 @@
                 <h3 class="company-name">ELARABY GROUP</h3>
                 <p class="job-title">Engineering Intern</p>
                 <nav class="links">
-                    <a href="#" class="btn btn-details">More!</a></nav>
+                    <!-- Unique ID for Elaraby More button -->
+                    <a href="#" id="openAlarabyModalBtn" class="btn btn-details">More!</a>
+                </nav>
             </div>
         </div>
-    
         <div class="card-right">
             <span class="date">07/2025 - 09/2025</span>
         </div>
@@ -101,7 +101,9 @@
                 <h3 class="company-name">ALX Africa</h3>
                 <p class="job-title">Data Scientist Intern</p>
                 <nav class="links">
-                    <a href="#" class="btn btn-details">More!</a></nav>
+                    <!-- Unique ID for ALX More button -->
+                    <a href="#" id="openAlxModalBtn" class="btn btn-details">More!</a>
+                </nav>
             </div>
         </div>
     
@@ -280,8 +282,138 @@
 <section class="terminal-block bordered-box">
   <span class="bordered-box-header">cat ~/links.md</span>
   <ul class="dash-list">
-    <li><a href="abdelrahmanelgerm@gmail.com">Email</a></li>
+    <li><a href="mailto:abdelrahmanelgerm@gmail.com">Email</a></li>
     <li><a href="https://www.instagram.com/abdelrahman_elgrm/?next=%2F">Instagram</a></li>
   </ul>
 </section>
+
+<div class="bordered-box">
+    <span class="bordered-box-header">cat ~/README.md</span>
+    <div class="bordered-box-body"><p>Source code on <a href="https://github.com/sagarreddypatil/portfolio-website">GitHub</a> thanks to <a>Sagar Patil</a></p> 
+</div>
+
+<!-- ==================== ELARABY MODAL POPUP ==================== -->
+<div id="alarabyModal" class="alaraby-modal-overlay">
+  <div class="alaraby-modal-content">
+    
+    <!-- Modal Header -->
+    <div class="alaraby-modal-header">
+      <div>
+        <h2>ELARABY Pictures</h2>
+        <p>a summer of gpus and questionable altitude choices</p>
+      </div>
+      <button id="closeAlarabyBtn" class="alaraby-close-btn">&times;</button>
+    </div>
+
+    <!-- Modal Body with Image Grid -->
+    <div class="alaraby-modal-body">
+      <div class="alaraby-image-grid">
+        
+        <!-- Card 1 -->
+        <div class="alaraby-img-card">
+          <img src="img\WhatsApp Image 2026-09-30 at 6.22.47 PM.jpeg" alt="team-pic">
+          <p>pictures with my team</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="alaraby-img-card">
+          <img src="more certificates\Certificate.jpg" alt="certificate">
+          <p>Certificate</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== ALX MODAL POPUP ==================== -->
+<div id="alxModal" class="alaraby-modal-overlay">
+  <div class="alaraby-modal-content">
+    
+    <!-- Modal Header -->
+    <div class="alaraby-modal-header">
+      <div>
+        <h2>ALX Africa Pictures</h2>
+        <p>data science journey and milestones</p>
+      </div>
+      <button id="closeAlxBtn" class="alaraby-close-btn">&times;</button>
+    </div>
+
+    <!-- Modal Body with Image Grid -->
+    <div class="alaraby-modal-body">
+      <div class="alaraby-image-grid">
+        
+        <!-- Card 1 -->
+        <div class="alaraby-img-card">
+          <img src="more certificates\51-data-analytics-certificate-abdelrahman-elgrm.png" alt="dataanalytic-pic">
+          <p>Data Analytics Certificate</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="alaraby-img-card">
+          <img src="more certificates\189-python-programming-certificate-abdelrahman-elgrm.png" alt="python-pic">
+          <p>Python Certificate</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="alaraby-img-card">
+          <img src="more certificates\89-professional-foundations-certificate-abdelrahman-elgrm.png" alt="foundation-pic">
+          <p>Foundation Certificate</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="alaraby-img-card">
+          <img src="more certificates\84-data-science-certificate-abdelrahman-elgrm.png" alt="datascience-pic">
+          <p>Data Science Certificate</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ==================== MODALS JAVASCRIPT ==================== -->
+<script>
+  // Elaraby Modal Logic
+  const alarabyModal = document.getElementById('alarabyModal');
+  const openAlarabyBtn = document.getElementById('openAlarabyModalBtn');
+  const closeAlarabyBtn = document.getElementById('closeAlarabyBtn');
+
+  openAlarabyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    alarabyModal.style.display = 'flex';
+  });
+
+  closeAlarabyBtn.addEventListener('click', () => {
+    alarabyModal.style.display = 'none';
+  });
+
+  // ALX Modal Logic
+  const alxModal = document.getElementById('alxModal');
+  const openAlxBtn = document.getElementById('openAlxModalBtn');
+  const closeAlxBtn = document.getElementById('closeAlxBtn');
+
+  openAlxBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    alxModal.style.display = 'flex';
+  });
+
+  closeAlxBtn.addEventListener('click', () => {
+    alxModal.style.display = 'none';
+  });
+
+  // Close modals when clicking outside the content box
+  window.addEventListener('click', (e) => {
+    if (e.target === alarabyModal) {
+      alarabyModal.style.display = 'none';
+    }
+    if (e.target === alxModal) {
+      alxModal.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
+</html>
