@@ -795,6 +795,13 @@ p {
   padding: 0 18px;
   border-top: 0px solid #e1e4e8;
   background-color: #ffffff;
+  font-weight: 300;
+  font-size: 6px;
+}
+
+.accordion-body p {
+  font-weight: 300;
+  font-size: 13px;
 }
 
 /* Expanded state */
