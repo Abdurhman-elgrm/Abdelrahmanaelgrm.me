@@ -32,10 +32,8 @@ const albums = [
   { src: "https://cdn-images.dzcdn.net/images/cover/2f152c3d4d7a7e607e985d77339af1de/1000x1000-000000-80-0-0.jpg", album: "Apollo XXI",                         artist: "Steve Lacy" },
   { src: "https://cdn-images.dzcdn.net/images/cover/2db20377876da16feb8ec9652e835a81/1000x1000-000000-80-0-0.jpg", album: "Cigarettes After Sex",               artist: "Cigarettes After Sex" },
   { src: "https://cdn-images.dzcdn.net/images/cover/6dfa4ea965a74b93870a85daa74b7ca3/1000x1000-000000-80-0-0.jpg", album: "Charm",                              artist: "Clairo" },
-  { src: "https://cdn-images.dzcdn.net/images/cover/cafdcecef6f86bf4bc84b9a3d8be4430/1000x1000-000000-80-0-0.jpg", album: "Crybaby",                            artist: "Lil Peep" },
   { src: "https://cdn-images.dzcdn.net/images/cover/cf9d0827a0f6089f22c1719b8d171f50/1000x1000-000000-80-0-0.jpg", album: "Goodbye & Good Riddance",            artist: "Juice WRLD" },
   { src: "https://cdn-images.dzcdn.net/images/cover/7a03f611f0d25cb00d19e4e01623178f/1000x1000-000000-80-0-0.jpg", album: "Legends Never Die",                  artist: "Juice WRLD" },
-  { src: "https://cdn-images.dzcdn.net/images/cover/2a602946ca93ca9d3acebc10f99d9a04/1000x1000-000000-80-0-0.jpg", album: "Superclean, Vol. II",                artist: "The Marias" },
   { src: "https://cdn-images.dzcdn.net/images/cover/f2d66b587ca8d3f0fa222c3501d23564/1000x1000-000000-80-0-0.jpg", album: "Die Lit",                            artist: "Playboi Carti" },
   { src: "https://cdn-images.dzcdn.net/images/cover/3c5f5f3f5f41ff96f961afd7df7eb4d9/1000x1000-000000-80-0-0.jpg", album: "Whole Lotta Red",                    artist: "Playboi Carti" },
   { src: "https://cdn-images.dzcdn.net/images/cover/fee22e51f2b04372eae250a78d9ea99d/1000x1000-000000-80-0-0.jpg", album: "for you",                            artist: "Nate Sib" },
@@ -49,11 +47,16 @@ const albums = [
   { src: "https://cdn-images.dzcdn.net/images/cover/616e7359251e6c79f7747a83b3aecf80/1000x1000-000000-80-0-0.jpg", album: "i am > i was",                       artist: "21 Savage" },
   { src: "https://cdn-images.dzcdn.net/images/cover/625708c5dfdd779b740fd4a0f9b845c6/1000x1000-000000-80-0-0.jpg", album: "Snow Cougar",                        artist: "Yung Gravy" },
   { src: "https://cdn-images.dzcdn.net/images/cover/db90a938ac7c33c94867346a12b1cfbe/1000x1000-000000-80-0-0.jpg", album: "Sensational",                        artist: "Yung Gravy" },
-  { src: "https://cdn-images.dzcdn.net/images/cover/247b228179aea3b083eef43522b78b45/1000x1000-000000-80-0-0.jpg", album: "Evolve",                             artist: "Imagine Dragons" },
+  { src: "https://cdn-images.dzcdn.net/images/cover/8445af48f681444a7d8c5997ad8cd74a/1000x1000-000000-80-0-0.jpg", album: "Sadeek El Bernameg",                 artist: "Tul8ate" },
   { src: "https://cdn-images.dzcdn.net/images/cover/c0a1d1281570ad3becbb6146c6d54c0c/1000x1000-000000-80-0-0.jpg", album: "American Beauty/American Psycho",    artist: "Fall Out Boy" },
   { src: "https://cdn-images.dzcdn.net/images/cover/765dc8aba0e893fc6d55af08572fc902/1000x1000-000000-80-0-0.jpg", album: "Trench",                             artist: "Twenty One Pilots" },
   { src: "https://cdn-images.dzcdn.net/images/cover/dbbde1014cda9b101412a8e27add0ad2/1000x1000-000000-80-0-0.jpg", album: "Blurryface",                         artist: "Twenty One Pilots" },
   { src: "https://cdn-images.dzcdn.net/images/cover/012b27906b430a37ec1d8f793d5c4fa6/1000x1000-000000-80-0-0.jpg", album: "24K Magic",                          artist: "Bruno Mars" },
+  { src: "https://cdn-images.dzcdn.net/images/cover/8259ad5e5dd08ed512a2f73ba1c9bde4/1000x1000-000000-80-0-0.jpg", album: "Allem Alby",                         artist: "Amr Diab" },
+  { src: "https://cdn-images.dzcdn.net/images/cover/c2ceda8dd8068731a8352ebb47744f89/1000x1000-000000-80-0-0.jpg", album: "Best of : Oum Kalsoum",              artist: "Oum Kalthoum" },
+  { src: "https://cdn-images.dzcdn.net/images/cover/f520bf0be2e3cfc476824e75d20a164a/1000x1000-000000-80-0-0.jpg", album: "After Hours",                        artist: "The Weeknd" },
+  { src: "https://cdn-images.dzcdn.net/images/cover/39f445145249ddc36279f9a349990d76/1000x1000-000000-80-0-0.jpg", album: "Narein",                             artist: "Tul8ate" },
+{ src: "https://cdn-images.dzcdn.net/images/cover/f01e09ceb8ad1e96707c1b4aadb5911b/1000x1000-000000-80-0-0.jpg", album: "Thriller",                             artist: "Michael Jackson" },
 ];
 
 const stage    = document.getElementById('stage');
