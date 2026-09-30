@@ -634,3 +634,195 @@ Here is a summary of all custom features, sub-pages, and interactive components 
   - Seamlessly attached beneath the canvas stage (`border-top` connection).
   - Categorized mood rows (**LOCKED IN**, **WINDOWS DOWN**, **LATE NIGHT WALKS**) with color-coded tags (Cyan & Coral) and artist lineups.
 
+### 4. `certificate.html` (Dedicated Sub-page)
+- **Unified Outer Container**: Wrapped in a single `cat ~/certificates.md` terminal section box.
+- **Interactive Cards**:
+  - IBM Python for AI and Data Science.
+  - Advanced Learning Algorithms.
+  - Supervised Machine Learning: Regression and Classification.
+  - Full-Stack Software Engineering Course.
+- **Visual Previews & PDF Downloads**:
+  - Displays full-width certificate JPG previews (`.cert-img-container`).
+  - Direct target buttons opening raw `.pdf` files.
+- **Site Favicon Integration**:
+  - Updated all site HTML headers (`index.html`, `resources.html`, `music.html`, `certificate.html`) to link to `favicon.png` with `<link rel="icon">` and `<link rel="shortcut icon">`.
+
+---
+
+## Step 15: Guide for Building the "Lore / FAQ" Expandable Accordion (`me.html`)
+
+This step guides you through creating an expandable **FAQ / Accordion** block (like the *Lore* section) where clicking a question expands/collapses its answer and toggles between `+` and `×` icons.
+
+### 1. Semantic HTML Markup (`me.html`)
+
+```html
+<section class="terminal-block bordered-box">
+  <span class="bordered-box-header">cat ~/lore.md</span>
+  <p class="section-note">my life's faqs</p>
+
+  <div class="category-tag">LIFE</div>
+
+  <div class="accordion">
+    <!-- Accordion Item 1 (Starts expanded) -->
+    <div class="accordion-item active">
+      <div class="accordion-header">
+        <span class="question-text">so tell me about yourself</span>
+        <div class="header-actions">
+          <span class="permalink-btn">#</span>
+          <span class="toggle-icon">×</span>
+        </div>
+      </div>
+      <div class="accordion-body">
+        <p>hey! i'm abdelrahman. engineering student at menofia university, fortnite map developer, and i like building things that solve actual problems.</p>
+      </div>
+    </div>
+
+    <!-- Accordion Item 2 -->
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <span class="question-text">why computer engineering?</span>
+        <div class="header-actions">
+          <span class="permalink-btn">#</span>
+          <span class="toggle-icon">+</span>
+        </div>
+      </div>
+      <div class="accordion-body">
+        <p>i love understanding how software talks directly to hardware. plus, turning abstract math and logic into working apps feels like real magic.</p>
+      </div>
+    </div>
+
+    <!-- Accordion Item 3 -->
+    <div class="accordion-item">
+      <div class="accordion-header">
+        <span class="question-text">what's your biggest weakness?</span>
+        <div class="header-actions">
+          <span class="permalink-btn">#</span>
+          <span class="toggle-icon">+</span>
+        </div>
+      </div>
+      <div class="accordion-body">
+        <p>convincing myself every weekend idea will "only take 2 hours".</p>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+### 2. Styling the Accordion (`style.css`)
+
+```css
+/* --- Accordion / Lore Section --- */
+.category-tag {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item {
+  background-color: #ffffff;
+  border: 1.5px solid #1f2328;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.08);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f6f8fa;
+}
+
+.question-text {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1f2328;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.permalink-btn,
+.toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d0d7de;
+  background-color: #fafbfc;
+  font-family: monospace;
+  font-size: 13px;
+  color: #57606a;
+  border-radius: 3px;
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 18px;
+  border-top: 0px solid #e1e4e8;
+  background-color: #ffffff;
+}
+
+/* Expanded state */
+.accordion-item.active .accordion-body {
+  max-height: 200px; /* Adjust according to text length */
+  padding: 14px 18px;
+  border-top: 1px solid #e1e4e8;
+}
+
+.accordion-item.active .accordion-header {
+  border-bottom: 1px solid #e1e4e8;
+}
+```
+
+### 3. JavaScript Toggle Logic (`me.js` or inline script)
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const icon = item.querySelector('.toggle-icon');
+      const isActive = item.classList.contains('active');
+
+      // Toggle active class on clicked item
+      item.classList.toggle('active');
+
+      // Update icon between '+' and '×'
+      if (icon) {
+        icon.textContent = isActive ? '+' : '×';
+      }
+    });
+  });
+});
+```
+
+
