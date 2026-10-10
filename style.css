@@ -159,6 +159,23 @@ p {
   background-color: #000000;
 }
 
+.btn-x {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  min-width: 130px;
+  min-height: 35px;
+}
+
+.btn-x svg {
+  fill: #ffffff;
+}
+
+.btn-x:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
 .btn-github {
   background-color: #ffffff;
   color: #1f2328;
@@ -484,15 +501,15 @@ p {
   text-align: left;
   background-color: #F5F4EF;
   color: #000000;
-  border: 1.5px solid #ffffff;
+  border: 1.5px solid #0a0909;
   padding: 10px 0;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-  font-size: 0.9rem;
+  font-family:  monospace;
+  font-size: 1rem;
   font-weight: 600;
   transition: background-color 0.2s, color 0.2s;
   border-radius: 0;
   margin: 2px;
-
+  
   
 }
 
@@ -501,7 +518,7 @@ p {
 }
 
 .btn-random:hover {
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(41, 40, 40);
   color: white;
   text-decoration: none;
 }
